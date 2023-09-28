@@ -6,6 +6,14 @@ html {
     max-width: auto;
 }
 
+tr{
+    font-size: 20px;
+    color: #6D6D6D;
+    font-weight: 600;
+    justify-content: space-between;
+    line-height: 2;
+}
+
 .blockOne{
     display: flex;
     justify-content: space-between;
