@@ -3,6 +3,7 @@ async function populateTable() {
   const data = await response.json();
   const dataTable = document.getElementById("dataTable");
   const imageContainer = document.getElementById("imageContainer");
+  let hoverImage = null; // Store the currently displayed image
 
   // Get the table body where we'll add the rows
   const tbody = dataTable.querySelector("tbody");
@@ -18,9 +19,9 @@ async function populateTable() {
 
     // Add other table cells here as needed
 
-    const tagCell = document.createElement("td");
-    tagCell.textContent = item.tag;
-    row.appendChild(tagCell);
+    // const tagCell = document.createElement("td");
+    // tagCell.textContent = item.tag;
+    // row.appendChild(tagCell);
 
     // Create a cell for the image
     const imageCell = document.createElement("td");
@@ -41,20 +42,22 @@ async function populateTable() {
     imageCell.appendChild(imageLink);
     row.appendChild(imageCell);
 
-    // Add an event listener for hover on each row
-    row.addEventListener("mouseenter", () => {
+    // Add an event listener for hover on the title cell
+    titleCell.addEventListener("mouseenter", () => {
       // Create an image element and set its source
-      const hoverImage = document.createElement("img");
+      hoverImage = document.createElement("img");
       hoverImage.src = item.image;
       hoverImage.alt = "Image";
       hoverImage.classList.add("square-image"); // Add the square-image class
-      imageContainer.innerHTML = ""; // Clear any previously displayed images
-      imageContainer.appendChild(hoverImage);
+      document.body.appendChild(hoverImage); // Append to the body
     });
 
-    // Remove the image on mouseleave
-    row.addEventListener("mouseleave", () => {
-      imageContainer.innerHTML = ""; // Clear the image container
+    // Remove the image when leaving the title cell
+    titleCell.addEventListener("mouseleave", () => {
+      if (hoverImage) {
+        document.body.removeChild(hoverImage); // Remove the image from the body
+        hoverImage = null; // Clear the reference
+      }
     });
 
     // Add the row to the table body

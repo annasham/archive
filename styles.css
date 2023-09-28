@@ -14,6 +14,15 @@ tr{
     line-height: 2;
 }
 
+tr:hover{
+    color: #DADADA;
+}
+
+.title-cell {
+    max-width: 150px; /* Adjust the width as needed */
+    word-wrap: break-word;
+  }
+
 .square-image {
     width: 4rem;
     height: 4rem;
@@ -38,6 +47,10 @@ tr{
     color: #6D6D6D;
 }
 
+#dataTable{
+    padding: 64px 64px 169px;
+}
+
 #item{
     display: flex;
     justify-content: space-between;
@@ -55,6 +68,13 @@ tr{
 #home{
     font-size: 36px;
     font-weight: 800;
+}
+
+#filtering{
+    display: flex;
+    justify-content: space-between;
+    padding: 64px 64px;
+    align-items: center;
 }
 
 #filter{
