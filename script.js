@@ -1,38 +1,8 @@
-// async function getData(){
-//   const response = await fetch('./JSON/archive.json');
-//   const data = await response.json();
-
-//   console.log(data.Sheet1)
-// }
-// getData();
-
-// function setData() {
-//   document.getElementById("title").textContent = data.Sheet1[0].title;
-// }
-// setData();
-
-// async function getData() {
-//   const response = await fetch('./JSON/archive.json');
-//   const data = await response.json();
-
-//   console.log(data.Sheet1);
-
-
-//   setData(data.Sheet1);
-// }
-
-// function setData(sheetData) {
-//   document.getElementById("title").textContent = sheetData[2].title;
-//   document.getElementById("tag").textContent = sheetData[2].tag;
-// }
-
-
-// getData();
-
 async function populateTable() {
   const response = await fetch('./JSON/archive.json');
   const data = await response.json();
   const dataTable = document.getElementById("dataTable");
+  const imageContainer = document.getElementById("imageContainer");
 
   // Get the table body where we'll add the rows
   const tbody = dataTable.querySelector("tbody");
@@ -46,24 +16,46 @@ async function populateTable() {
     titleCell.textContent = item.title;
     row.appendChild(titleCell);
 
-    // const descriptionCell = document.createElement("td");
-    // descriptionCell.textContent = item.description;
-    // row.appendChild(descriptionCell);
-
-    // const imageCell = document.createElement("td");
-    // const image = document.createElement("img");
-    // image.src = item.image;
-    // image.alt = "Image";
-    // imageCell.appendChild(image);
-    // row.appendChild(imageCell);
-
-    // const idCell = document.createElement("td");
-    // idCell.textContent = item.id;
-    // row.appendChild(idCell);
+    // Add other table cells here as needed
 
     const tagCell = document.createElement("td");
     tagCell.textContent = item.tag;
     row.appendChild(tagCell);
+
+    // Create a cell for the image
+    const imageCell = document.createElement("td");
+
+    // Create an anchor (link) element for the image
+    const imageLink = document.createElement("a");
+    imageLink.href = item.image; // Set the link URL
+
+    // Create an image element and set its source
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = "Image";
+
+    // Add the square-image class to the image
+    image.classList.add("square-image");
+
+    imageLink.appendChild(image);
+    imageCell.appendChild(imageLink);
+    row.appendChild(imageCell);
+
+    // Add an event listener for hover on each row
+    row.addEventListener("mouseenter", () => {
+      // Create an image element and set its source
+      const hoverImage = document.createElement("img");
+      hoverImage.src = item.image;
+      hoverImage.alt = "Image";
+      hoverImage.classList.add("square-image"); // Add the square-image class
+      imageContainer.innerHTML = ""; // Clear any previously displayed images
+      imageContainer.appendChild(hoverImage);
+    });
+
+    // Remove the image on mouseleave
+    row.addEventListener("mouseleave", () => {
+      imageContainer.innerHTML = ""; // Clear the image container
+    });
 
     // Add the row to the table body
     tbody.appendChild(row);
