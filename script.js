@@ -19,9 +19,9 @@ async function populateTable() {
 
     // Add other table cells here as needed
 
-    // const tagCell = document.createElement("td");
-    // tagCell.textContent = item.tag;
-    // row.appendChild(tagCell);
+    const tagCell = document.createElement("td");
+    tagCell.textContent = item.tag;
+    row.appendChild(tagCell);
 
     // Create a cell for the image
     const imageCell = document.createElement("td");
