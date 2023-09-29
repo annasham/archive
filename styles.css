@@ -64,11 +64,20 @@ tr:hover{
     font-size: 20px;
     font-weight: 700;
     text-align: center;
+    text-decoration: none;
+    color: #DADADA;
+}
+
+a{
+    text-decoration: none;
+    color: #DADADA;
 }
 
 #home{
     font-size: 36px;
     font-weight: 800;
+    text-decoration: none;
+    color: #DADADA;
 }
 
 #filtering{
