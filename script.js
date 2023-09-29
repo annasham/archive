@@ -93,3 +93,23 @@ async function populateImageGrid() {
 
 // Call the function to populate the image grid
 populateImageGrid();
+
+// Get references to the input field and word list
+const wordInput = document.getElementById("wordInput");
+const wordList = document.getElementById("wordList");
+
+// Event listener for when the user presses Enter in the input field
+wordInput.addEventListener("keyup", function(event) {
+  if (event.key === "Enter") {
+    const word = wordInput.value.trim(); // Remove leading/trailing whitespace
+    if (word !== "") {
+      // Create a new list item and add the word to the list
+      const listItem = document.createElement("li");
+      listItem.textContent = word;
+      wordList.appendChild(listItem);
+
+      // Clear the input field for the next word
+      wordInput.value = "";
+    }
+  }
+});
