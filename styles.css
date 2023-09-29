@@ -125,3 +125,7 @@ a{
     width: 90%;
     height: auto;
   }
+
+  #wordInput {
+    margin-bottom: 10px;
+  }
