@@ -129,3 +129,25 @@ a{
   #wordInput {
     margin-bottom: 10px;
   }
+
+  #glossary{
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 16px;
+    /* align-self: stretch; */
+    flex-wrap: wrap;
+  }
+
+  #term{
+    display: flex;
+    padding: 14px 52px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: #7000FF;
+    color: #dadada;
+     border-radius: 16px;
+     font-weight: 800;
+     font-size: 24px;
+  }
