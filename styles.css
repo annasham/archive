@@ -23,7 +23,7 @@ tr:hover{
   }
 
 .square-image {
-    padding-left: 32px;
+    padding-left: 250px;
     width: 4rem;
     height: 4rem;
     object-fit: cover; /* Crop the image to fit the square */
