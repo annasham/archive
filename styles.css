@@ -100,3 +100,23 @@ a{
     justify-content: center;
     display: flex;
 }
+
+ /* Style for the image grid */
+ .image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    gap: 20px; /* Adjust the gap between images */
+  }
+
+  /* Style for each image item */
+  .image-item {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  /* Style for the image itself */
+  .image-item img {
+    width: 100%;
+    height: auto;
+  }

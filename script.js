@@ -67,3 +67,29 @@ async function populateTable() {
 
 // Call the function to populate the table
 populateTable();
+
+async function populateImageGrid() {
+  const response = await fetch('./JSON/archive.json'); // Replace with your JSON file path
+  const data = await response.json();
+  const imageGrid = document.getElementById("imageGrid");
+
+  // Loop through the data and create an image item for each image in the JSON
+  data.Sheet1.forEach(item => {
+    const imageItem = document.createElement("div");
+    imageItem.classList.add("image-item");
+
+    // Create an image element and set its source
+    const image = document.createElement("img");
+    image.src = item.image;
+    image.alt = "Image";
+
+    // Append the image to the image item
+    imageItem.appendChild(image);
+
+    // Append the image item to the image grid
+    imageGrid.appendChild(imageItem);
+  });
+}
+
+// Call the function to populate the image grid
+populateImageGrid();
