@@ -108,7 +108,7 @@ a{
  /* Style for the image grid */
  .image-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
     gap: 20px; /* Adjust the gap between images */
   }
 
@@ -122,6 +122,6 @@ a{
 
   /* Style for the image itself */
   .image-item img {
-    width: 100%;
+    width: 90%;
     height: auto;
   }
