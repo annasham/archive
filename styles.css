@@ -18,6 +18,10 @@ tr:hover{
     color: #DADADA;
 }
 
+td{
+    gap: 16px;
+}
+
 .title-cell {
     max-width: 150px; /* Adjust the width as needed */
     word-wrap: break-word;

@@ -23,24 +23,24 @@ async function populateTable() {
     tagCell.textContent = item.tag;
     row.appendChild(tagCell);
 
-    // Create a cell for the image
-    const imageCell = document.createElement("td");
+    // // Create a cell for the image
+    // const imageCell = document.createElement("td");
 
-    // Create an anchor (link) element for the image
-    const imageLink = document.createElement("a");
-    imageLink.href = item.image; // Set the link URL
+    // // Create an anchor (link) element for the image
+    // const imageLink = document.createElement("a");
+    // imageLink.href = item.image; // Set the link URL
 
-    // Create an image element and set its source
-    const image = document.createElement("img");
-    image.src = item.image;
-    image.alt = "Image";
+    // // Create an image element and set its source
+    // const image = document.createElement("img");
+    // image.src = item.image;
+    // image.alt = "Image";
 
-    // Add the square-image class to the image
-    image.classList.add("square-image");
+    // // Add the square-image class to the image
+    // image.classList.add("square-image");
 
-    imageLink.appendChild(image);
-    imageCell.appendChild(imageLink);
-    row.appendChild(imageCell);
+    // imageLink.appendChild(image);
+    // imageCell.appendChild(imageLink);
+    // row.appendChild(imageCell);
 
     // Add an event listener for hover on the title cell
     titleCell.addEventListener("mouseenter", () => {
