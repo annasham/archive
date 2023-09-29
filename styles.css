@@ -114,9 +114,10 @@ a{
 
   /* Style for each image item */
   .image-item {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     box-sizing: border-box;
+    border-radius: 8px;
   }
 
   /* Style for the image itself */
